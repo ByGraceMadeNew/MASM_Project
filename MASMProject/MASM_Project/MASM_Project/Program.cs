@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 class Fibonacci
 {
     static int FibonacciRecursive(int n, int[] fibArray)
@@ -14,14 +14,14 @@ class Fibonacci
             fibArray[1] = 1;
             return 1;
         }
-        else if (n>2)
+        else if (n >= 2)
         {
-            fibArray[n] = FibonacciRecursive(n-2, int[] fibArray) + FibonacciRecursive(n-1, int[] fibArray);
+            fibArray[n] = FibonacciRecursive(n - 2, fibArray) + FibonacciRecursive(n - 1, fibArray);
             return fibArray[n];
         }
         else
         {
-            
+            return -1;
         }
     }
     static void Main()
@@ -33,7 +33,7 @@ class Fibonacci
         Console.WriteLine(" Fibonacci Series up to " + n + ": ");
         for (int i = 0; i <= n; i++)
         {
-            Console.Write(fibArray[i] + " ␣ ");
+            Console.Write(fibArray[i] + ", ");
         }
     }
 }
