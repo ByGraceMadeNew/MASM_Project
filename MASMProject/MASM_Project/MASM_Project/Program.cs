@@ -16,7 +16,8 @@ class Fibonacci
         }
         else if (n >= 2)
         {
-            fibArray[n] = FibonacciRecursive(n - 2, fibArray) + FibonacciRecursive(n - 1, fibArray);
+            fibArray[n-1] = FibonacciRecursive(n - 1, fibArray);
+            fibArray[n] = fibArray[n - 2] + fibArray[n - 1];
             return fibArray[n];
         }
         else
@@ -37,3 +38,4 @@ class Fibonacci
         }
     }
 }
+
