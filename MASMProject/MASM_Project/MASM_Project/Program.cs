@@ -28,9 +28,9 @@ class Fibonacci
     static void Main()
     {
         int n = 10; // Example input
-        int[] fibArray = new int[n + 1];
         try
         {
+            int[] fibArray = new int[n + 1];
             Console.WriteLine(" Fibonacci of " + n + " is: " + FibonacciRecursive(n, fibArray));
             Console.WriteLine(" Fibonacci Series up to " + n + ": ");
             for (int i = 0; i <= n; i++)
@@ -40,7 +40,7 @@ class Fibonacci
         }
         catch
         {
-            Console.WriteLine("This sequence cannot be computed.");
+            Console.WriteLine($"Fibonnaci of {n} cannot be computed.");
         }
     }
 }
