@@ -3,18 +3,18 @@ class Fibonacci
 {
     static int FibonacciRecursive(int n, int[] fibArray)
     {
-        if (n == 0)
+        if (n == 0) // 0th number = 0
         {
             fibArray[0] = 0;
             return 0;
         }
-        else if (n == 1)
+        else if (n == 1) // 1st number = 0 + 1
         {
             fibArray[0] = 0;
             fibArray[1] = 1;
             return 1;
         }
-        else if (n >= 2)
+        else if (n >= 2) // nth number = (n-2)th number + (n-1)th number
         {
             fibArray[n-1] = FibonacciRecursive(n - 1, fibArray);
             fibArray[n] = fibArray[n - 2] + fibArray[n - 1];
@@ -40,7 +40,7 @@ class Fibonacci
         }
         catch
         {
-            Console.WriteLine($"Fibonnaci of {n} cannot be computed.");
+            Console.WriteLine($"Fibonacci of {n} cannot be computed.");
         }
     }
 }
