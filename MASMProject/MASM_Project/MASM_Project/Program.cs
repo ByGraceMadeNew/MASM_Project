@@ -22,19 +22,25 @@ class Fibonacci
         }
         else
         {
-            return -1;
+            throw new Exception("The Fibonacci sequence does not work below the 0th number");
         }
     }
     static void Main()
     {
         int n = 10; // Example input
         int[] fibArray = new int[n + 1];
-        Console.WriteLine(" Fibonacci of " + n + " is: " +
-        FibonacciRecursive(n, fibArray));
-        Console.WriteLine(" Fibonacci Series up to " + n + ": ");
-        for (int i = 0; i <= n; i++)
+        try
         {
-            Console.Write(fibArray[i] + ", ");
+            Console.WriteLine(" Fibonacci of " + n + " is: " + FibonacciRecursive(n, fibArray));
+            Console.WriteLine(" Fibonacci Series up to " + n + ": ");
+            for (int i = 0; i <= n; i++)
+            {
+                Console.Write(fibArray[i] + ", ");
+            }
+        }
+        catch
+        {
+            Console.WriteLine("This sequence cannot be computed.");
         }
     }
 }
