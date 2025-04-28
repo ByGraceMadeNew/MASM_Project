@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 class Fibonacci
 {
     static int FibonacciRecursive(int n, int[] fibArray)
@@ -16,7 +17,7 @@ class Fibonacci
         }
         else if (n >= 2) // nth number = (n-2)th number + (n-1)th number
         {
-            fibArray[n-1] = FibonacciRecursive(n - 1, fibArray);
+            fibArray[n - 1] = FibonacciRecursive(n - 1, fibArray);
             fibArray[n] = fibArray[n - 2] + fibArray[n - 1];
             return fibArray[n];
         }
@@ -27,6 +28,8 @@ class Fibonacci
     }
     static void Main()
     {
+        Stopwatch timer = new Stopwatch(); // Timer for program runtime
+        timer.Start();
         int n = 10; // Example input
         try
         {
@@ -42,6 +45,8 @@ class Fibonacci
         {
             Console.WriteLine($"Fibonacci of {n} cannot be computed.");
         }
+        timer.Stop();
+        Console.WriteLine();
+        Console.WriteLine($"Runtime: {timer.Elapsed.TotalMilliseconds} ms"); // Displays runtime of program in milliseconds
     }
 }
-
