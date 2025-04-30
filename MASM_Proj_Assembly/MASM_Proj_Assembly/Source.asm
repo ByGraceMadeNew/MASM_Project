@@ -89,11 +89,7 @@ main proc
     cmp n, 0
     jle error_case
 
-    ; --- Get start time ---
-    call GetTickCount
-    mov start, eax          
-    call WriteInt           
-    call Crlf
+    
 
     ; --- Run Fibonacci ---
     push offset fibArray
@@ -104,11 +100,7 @@ main proc
 
 
 
-    ; --- Get end time ---
-    mov eax, 0
-    call GetTickCount       
-    call WriteInt           
-    call Crlf
+    
 
     INVOKE ExitProcess, 0
 main endp
