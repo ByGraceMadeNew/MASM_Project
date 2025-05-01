@@ -28,8 +28,6 @@ class Fibonacci
     }
     static void Main()
     {
-        Stopwatch timer = new Stopwatch(); // Timer for program runtime
-        timer.Start();
         int n = 10; // Example input
         try
         {
@@ -45,8 +43,5 @@ class Fibonacci
         {
             Console.WriteLine($"Fibonacci of {n} cannot be computed.");
         }
-        timer.Stop();
-        Console.WriteLine();
-        Console.WriteLine($"Runtime: {timer.Elapsed.TotalMilliseconds} ms"); // Displays runtime of program in milliseconds
     }
 }
